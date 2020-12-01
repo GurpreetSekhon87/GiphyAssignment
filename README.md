@@ -43,10 +43,14 @@ the favorite gifs stored in the local database
 ### To Retrieve data from Local Database
  It will return the observable<[GifModels]>. User need to subscribe to get the data.
 ```swift
-        let gifsObservable = gifViewModel.fetchSavedGifs()
+    let gifsObservable = gifViewModel.fetchSavedGifs()
 ```
 ### To delete data from Local Database
 ```swift
-        GSDBManager.sharedGifDBManager.getGifDao().deleteGifById(id: [Need to pass model id property])
+    GSDBManager.sharedGifDBManager.getGifDao().deleteGifById(id: [Need to pass model id property])
 ```
 ### Test Coverage is 67%
+
+### Improvements
+1. pagination - Table view prefetch DataSource protocol can be used to implement pagination
+2. Refresh Table view
