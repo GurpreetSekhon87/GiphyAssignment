@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HgJ-LR-YgE">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Feed-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="GSFeedViewController" customModule="GiphyAssignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="y0n-xp-Q2X">
+                                <rect key="frame" x="0.0" y="112" width="414" height="701"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="gifIdentifier" rowHeight="148" id="2Cf-p5-Tqa" customClass="GifFeedTableViewCell" customModule="GiphyAssignment" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="148"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Cf-p5-Tqa" id="ISR-eU-OqH">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="148"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lsk-0u-raZ" customClass="FLAnimatedImageView">
+                                                    <rect key="frame" x="20" y="10" width="174" height="128"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="174" id="aHF-ii-Ogc"/>
+                                                        <constraint firstAttribute="height" constant="128" id="uvy-gq-deC"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfV-Gk-lI0">
+                                                    <rect key="frame" x="251" y="42" width="140" height="64"/>
+                                                    <color key="backgroundColor" name="AccentColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="Frm-Op-Ah5"/>
+                                                        <constraint firstAttribute="height" constant="64" id="bML-q7-0OJ"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" title="Add to Favorite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="favoriteButtonActionWithSender:" destination="2Cf-p5-Tqa" eventType="touchUpInside" id="7UI-WR-Zsu"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="lsk-0u-raZ" firstAttribute="leading" secondItem="ISR-eU-OqH" secondAttribute="leading" constant="20" symbolic="YES" id="7Vb-Z5-DtY"/>
+                                                <constraint firstItem="MfV-Gk-lI0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lsk-0u-raZ" secondAttribute="trailing" constant="8" symbolic="YES" id="Yb0-2c-6oZ"/>
+                                                <constraint firstItem="lsk-0u-raZ" firstAttribute="centerY" secondItem="ISR-eU-OqH" secondAttribute="centerY" id="oEG-f2-8SG"/>
+                                                <constraint firstItem="MfV-Gk-lI0" firstAttribute="centerY" secondItem="ISR-eU-OqH" secondAttribute="centerY" id="qV0-Lk-Kfe"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="MfV-Gk-lI0" secondAttribute="trailing" constant="3" id="ww4-QD-CnW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="favoriteButton" destination="MfV-Gk-lI0" id="uMT-I8-1ai"/>
+                                            <outlet property="gifImageView" destination="lsk-0u-raZ" id="9Xb-ke-zW3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="f3e-MI-o1a">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" systemColor="linkColor"/>
+                            </activityIndicatorView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="bRP-oe-8TN">
+                                <rect key="frame" x="0.0" y="68" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="fTH-vp-BWa"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Uul-KA-cIY"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="f3e-MI-o1a" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="63e-Dj-jey"/>
+                            <constraint firstItem="f3e-MI-o1a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8tL-tr-JG8"/>
+                            <constraint firstItem="y0n-xp-Q2X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DXU-l4-IeM"/>
+                            <constraint firstItem="y0n-xp-Q2X" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="IBS-NS-jC1"/>
+                            <constraint firstItem="y0n-xp-Q2X" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ITe-Yk-ozs"/>
+                            <constraint firstItem="bRP-oe-8TN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Wc7-bF-0On"/>
+                            <constraint firstItem="y0n-xp-Q2X" firstAttribute="top" secondItem="bRP-oe-8TN" secondAttribute="bottom" id="cne-v9-Whs"/>
+                            <constraint firstItem="bRP-oe-8TN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lJZ-m2-01D"/>
+                            <constraint firstItem="bRP-oe-8TN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="qu5-SK-MBC"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Feed" image="list.dash" catalog="system" selectedImage="list.bullet.rectangle" id="xYQ-Te-XID"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="f3e-MI-o1a" id="d5e-9v-qEc"/>
+                        <outlet property="feedTableView" destination="y0n-xp-Q2X" id="f4Q-1r-xeX"/>
+                        <outlet property="gifSearchBar" destination="bRP-oe-8TN" id="Pmr-vz-bU2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1039.1304347826087" y="106.47321428571428"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="VbJ-Vr-jQm">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="HgJ-LR-YgE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OoX-bA-NLJ">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="qDE-qB-Fvq"/>
+                        <segue destination="r2q-7n-joP" kind="relationship" relationship="viewControllers" id="Pie-W7-MfA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Qq-YK-EtQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128.98550724637681" y="106.47321428571428"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="h4b-jk-fhL">
+            <objects>
+                <viewController id="r2q-7n-joP" customClass="GSFavoriteViewController" customModule="GiphyAssignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u2N-HP-lbl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FDl-Tn-FL9">
+                                <rect key="frame" x="0.0" y="73" width="414" height="740"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="gM8-Eh-rOT">
+                                    <size key="itemSize" width="170" height="220"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="gifFavoriteCellIdentifier" id="KVG-dQ-CX3" customClass="FavoriteGifCollectionViewCell" customModule="GiphyAssignment" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="10" width="170" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Sas-3F-Pa0">
+                                            <rect key="frame" x="0.0" y="0.0" width="170" height="220"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KfE-K4-Ecd" customClass="FLAnimatedImageView">
+                                                    <rect key="frame" x="8" y="8" width="154" height="143"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="143" id="pNp-yv-VXW"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWW-XI-afM">
+                                                    <rect key="frame" x="8" y="168" width="154" height="44"/>
+                                                    <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="6BJ-gf-yDD"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" title="UnFavorite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <integer key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="unFavoriteButtonAction:" destination="KVG-dQ-CX3" eventType="touchUpInside" id="aXC-4r-Fgr"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="KfE-K4-Ecd" secondAttribute="trailing" constant="8" id="MOE-As-zGh"/>
+                                                <constraint firstItem="KfE-K4-Ecd" firstAttribute="leading" secondItem="Sas-3F-Pa0" secondAttribute="leading" constant="8" id="QbL-ye-HUl"/>
+                                                <constraint firstItem="yWW-XI-afM" firstAttribute="leading" secondItem="Sas-3F-Pa0" secondAttribute="leading" constant="8" id="USp-GS-8b0"/>
+                                                <constraint firstAttribute="trailing" secondItem="yWW-XI-afM" secondAttribute="trailing" constant="8" id="b5w-fj-T7u"/>
+                                                <constraint firstAttribute="bottom" secondItem="yWW-XI-afM" secondAttribute="bottom" constant="8" id="cZw-63-va9"/>
+                                                <constraint firstItem="KfE-K4-Ecd" firstAttribute="top" secondItem="Sas-3F-Pa0" secondAttribute="top" constant="8" id="oFL-4A-FoO"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="170" height="220"/>
+                                        <connections>
+                                            <outlet property="favoriteGifImageView" destination="KfE-K4-Ecd" id="2hC-9b-pgg"/>
+                                            <outlet property="unFavoriteButton" destination="yWW-XI-afM" id="kNJ-XZ-Tih"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Favorites Gifs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4j-up-VUa">
+                                <rect key="frame" x="104.5" y="431" width="205.5" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="oMZ-Ka-K87"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9Cb-n9-8e9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="j4j-up-VUa" firstAttribute="centerX" secondItem="u2N-HP-lbl" secondAttribute="centerX" id="Aqv-8P-nz0"/>
+                            <constraint firstItem="FDl-Tn-FL9" firstAttribute="bottom" secondItem="9Cb-n9-8e9" secondAttribute="bottom" id="HZG-ZV-uRw"/>
+                            <constraint firstItem="FDl-Tn-FL9" firstAttribute="top" secondItem="9Cb-n9-8e9" secondAttribute="top" constant="29" id="IWe-IH-tiM"/>
+                            <constraint firstItem="j4j-up-VUa" firstAttribute="centerY" secondItem="u2N-HP-lbl" secondAttribute="centerY" id="bl2-1i-E5L"/>
+                            <constraint firstItem="FDl-Tn-FL9" firstAttribute="leading" secondItem="9Cb-n9-8e9" secondAttribute="leading" id="lYV-9x-RH5"/>
+                            <constraint firstItem="9Cb-n9-8e9" firstAttribute="trailing" secondItem="FDl-Tn-FL9" secondAttribute="trailing" id="y6l-nq-QUr"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="star" catalog="system" selectedImage="star.fill" id="BKZ-Zv-ub6"/>
+                    <connections>
+                        <outlet property="favoriteGifsCollectionView" destination="FDl-Tn-FL9" id="mZu-Ri-RJL"/>
+                        <outlet property="placeHolderLabel" destination="j4j-up-VUa" id="Udy-pM-UNd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Jq-rp-dbG" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1873.913043478261" y="105.80357142857143"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

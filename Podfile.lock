@@ -1,0 +1,89 @@
+PODS:
+  - DeepDiff (2.3.1)
+  - FLAnimatedImage (1.0.12)
+  - Giphy (2.0.8):
+    - DeepDiff
+    - libwebp
+    - PINCache
+  - GRDB.swift (4.14.0):
+    - GRDB.swift/standard (= 4.14.0)
+  - GRDB.swift/standard (4.14.0)
+  - libwebp (1.1.0):
+    - libwebp/demux (= 1.1.0)
+    - libwebp/mux (= 1.1.0)
+    - libwebp/webp (= 1.1.0)
+  - libwebp/demux (1.1.0):
+    - libwebp/webp
+  - libwebp/mux (1.1.0):
+    - libwebp/demux
+  - libwebp/webp (1.1.0)
+  - Nimble (8.1.2)
+  - PINCache (3.0.3):
+    - PINCache/Arc-exception-safe (= 3.0.3)
+    - PINCache/Core (= 3.0.3)
+  - PINCache/Arc-exception-safe (3.0.3):
+    - PINCache/Core
+  - PINCache/Core (3.0.3):
+    - PINOperation (~> 1.2.1)
+  - PINOperation (1.2.1)
+  - Quick (2.2.1)
+  - RxBlocking (5.1.1):
+    - RxSwift (~> 5)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxGRDB (0.18.0):
+    - RxGRDB/default (= 0.18.0)
+    - RxSwift (~> 5.0)
+  - RxGRDB/default (0.18.0):
+    - GRDB.swift (~> 4.1)
+    - RxSwift (~> 5.0)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
+
+DEPENDENCIES:
+  - FLAnimatedImage
+  - Giphy
+  - Nimble (~> 8.0)
+  - Quick (~> 2.2)
+  - RxBlocking
+  - RxCocoa
+  - RxGRDB (= 0.18.0)
+
+SPEC REPOS:
+  trunk:
+    - DeepDiff
+    - FLAnimatedImage
+    - Giphy
+    - GRDB.swift
+    - libwebp
+    - Nimble
+    - PINCache
+    - PINOperation
+    - Quick
+    - RxBlocking
+    - RxCocoa
+    - RxGRDB
+    - RxRelay
+    - RxSwift
+
+SPEC CHECKSUMS:
+  DeepDiff: e5ae6c50d0321568e4508cec5930b9f10bb293fc
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  Giphy: b32a3f3dfdef939fe283a0bdb04d01db38399547
+  GRDB.swift: 8cc3ab7c8b8b4ac1761deb8dca4b51c1c9d429f8
+  libwebp: 946cb3063cea9236285f7e9a8505d806d30e07f3
+  Nimble: 3864815b4703c7ebffba875973c70e854489fbae
+  PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
+  PINOperation: 00c935935f1e8cf0d1e2d6b542e75b88fc3e5e20
+  Quick: f5754d69b7013f5864c29aab9ae6f0c79c5bc200
+  RxBlocking: 5f700a78cad61ce253ebd37c9a39b5ccc76477b4
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxGRDB: 41dfd8f987aad7a7bdd7c420319d3eb23ee383f3
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+
+PODFILE CHECKSUM: 06e46460de6c932481c1b6b4f6844140d87b61e7
+
+COCOAPODS: 1.9.3
