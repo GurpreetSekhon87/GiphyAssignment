@@ -52,5 +52,5 @@ the favorite gifs stored in the local database
 ### Test Coverage is 67%
 
 ### Improvements
-1. pagination - Table view prefetch DataSource protocol can be used to implement pagination
-2. Refresh Table view
+1. Refresh Table view
+

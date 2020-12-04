@@ -117,14 +117,16 @@ public class GSGifDao {
     }
 
     // Delete Gif from DB
-    func deleteGifById(id: String) {
+    func deleteGifById(id: String) -> Bool {
         do {
             try sharedDBPool.writeInTransaction { db in
                 try GifModel.deleteOne(db, key: id)
                 return .commit
             }
+            return true
         } catch {
             os_log("Delete Gif By Id - Error")
+            return false
         }
     }
 }

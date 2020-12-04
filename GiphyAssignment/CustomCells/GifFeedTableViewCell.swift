@@ -7,6 +7,7 @@
 
 import UIKit
 import FLAnimatedImage
+import Kingfisher
 
 /// GifFeedTableViewCellDelegate to handle user action
 protocol GifFeedTableViewCellDelegate : class {
@@ -66,14 +67,9 @@ class GifFeedTableViewCell: UITableViewCell {
 
         self.gif = model
 
-        DispatchQueue.global().async {
-            let data = try? Data(contentsOf: URL(string: url)!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-
-            DispatchQueue.main.async {
-                if let data = data {
-                    self.gifImageView.animatedImage = FLAnimatedImage(animatedGIFData: data)
-                }
-            }
+        if let url = URL(string: url) {
+            gifImageView.kf.indicatorType = .activity
+            gifImageView.kf.setImage(with: url)
         }
     }
 
@@ -85,13 +81,9 @@ class GifFeedTableViewCell: UITableViewCell {
 
         if let storedGifs = localGifs {
             let results = storedGifs.filter { $0.id == gif.id }
-
-            if results.isEmpty {
-                return false
-            } else {
-                return true
-            }
+            return !results.isEmpty
         }
         return false
     }
 }
+

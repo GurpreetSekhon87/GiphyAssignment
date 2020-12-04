@@ -6,11 +6,10 @@ target 'GiphyAssignment' do
   use_frameworks!
 
   # Pods for GiphyAssignment
-    pod 'Giphy'
-    pod 'FLAnimatedImage'
     pod 'RxGRDB', '0.18.0'
     pod 'RxCocoa'
-
+    pod 'Kingfisher', '~> 5.15'
+    
   target 'GiphyAssignmentTests' do
     inherit! :search_paths
     # Pods for testing

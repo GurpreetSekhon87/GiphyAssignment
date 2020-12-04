@@ -14,8 +14,8 @@ enum NetworkEnvironment {
 }
 
 public enum GiphyApi {
-    case trending(page:Int)
-    case search(query:String)
+    case trending(offset:Int)
+    case search(query:String, offset: Int)
 }
 
 extension GiphyApi: EndPointType {
@@ -48,17 +48,17 @@ extension GiphyApi: EndPointType {
 
     var task: HTTPTask {
         switch self {
-        case .trending:
+        case .trending(let offset):
             return .requestParameters(bodyParameters: nil,
                                       bodyEncoding: .urlEncoding,
-                                      urlParameters: ["api_key": giphyAPIKey, "limit": "10",
-                                                      "offset": "0", "rating": "g", "lang": "en",
+                                      urlParameters: ["api_key": giphyAPIKey, "limit": "4",
+                                                      "offset": offset, "rating": "g", "lang": "en",
                                                       "random_id": "e826c9fc5c929e0d6c6d423841a282aa"])
-        case .search(let query):
+        case .search(let query, let offset):
             return .requestParameters(bodyParameters: nil,
                                       bodyEncoding: .urlEncoding,
-                                      urlParameters: ["api_key": giphyAPIKey, "limit": "20",
-                                                      "offset": "0", "q": query ,"rating": "g", "lang": "en",
+                                      urlParameters: ["api_key": giphyAPIKey, "limit": "4",
+                                                      "offset": offset, "q": query ,"rating": "g", "lang": "en",
                                                       "random_id": "e826c9fc5c929e0d6c6d423841a282aa"])
         }
     }

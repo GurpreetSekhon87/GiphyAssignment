@@ -37,14 +37,9 @@ class FavoriteGifCollectionViewCell: UICollectionViewCell {
             return
         }
 
-        DispatchQueue.global().async {
-            let data = try? Data(contentsOf: URL(string: url)!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-
-            DispatchQueue.main.async {
-                if let data = data {
-                    self.favoriteGifImageView.animatedImage = FLAnimatedImage(animatedGIFData: data)
-                }
-            }
+        if let url = URL(string: url) {
+            favoriteGifImageView.kf.indicatorType = .activity
+            favoriteGifImageView.kf.setImage(with: url)
         }
     }
 

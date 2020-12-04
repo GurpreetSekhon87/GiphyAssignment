@@ -37,6 +37,7 @@ class GSFavoriteViewController: UIViewController, UICollectionViewDelegate {
     private func bindCollectionViewForGifs() {
         gifViewModel.gifs.bind(to: favoriteGifsCollectionView.rx.items(cellIdentifier: gifFavoriteCellIdentifier, cellType: FavoriteGifCollectionViewCell.self)) { (row, model, cell) in
                     cell.cellDelegate = self
+                    cell.unFavoriteButton.tag = row
                     cell.configure(with: model)
         }.disposed(by: bag)
     }
@@ -78,7 +79,9 @@ extension GSFavoriteViewController: FavoriteGifCollectionViewCellDelegate {
         guard let id = self.favoritesGif[tag].id else {
             return
         }
-        GSDBManager.sharedGifDBManager.getGifDao().deleteGifById(id: id)
-        loadLocalGifs()
+
+        if gifViewModel.deleteGifFromDatabase(id: id) {
+            loadLocalGifs()
+        }
     }
 }
