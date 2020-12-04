@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import FLAnimatedImage
 import Kingfisher
 
 /// GifFeedTableViewCellDelegate to handle user action
@@ -21,7 +20,7 @@ class GifFeedTableViewCell: UITableViewCell {
     var localGifs: [GifModel]?
     var gif: GifModel?
 
-    @IBOutlet weak var gifImageView: FLAnimatedImageView!
+    @IBOutlet weak var gifImageView: AnimatedImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -37,10 +36,14 @@ class GifFeedTableViewCell: UITableViewCell {
     /// - Parameter sender: Button
     @IBAction func favoriteButtonAction(sender: UIButton) {
         // Add to Favorites
+
+        guard let gif = self.gif else {
+            return
+        }
         if favoriteButton.titleLabel?.text == "Add to favorite" {
-            cellDelegate?.didPressFavoriteButton(tag: sender.tag, model: self.gif!, isAlreadyFavorite: false)
+            cellDelegate?.didPressFavoriteButton(tag: sender.tag, model: gif, isAlreadyFavorite: false)
         } else {
-            cellDelegate?.didPressFavoriteButton(tag: sender.tag, model: self.gif!, isAlreadyFavorite: true)
+            cellDelegate?.didPressFavoriteButton(tag: sender.tag, model: gif, isAlreadyFavorite: true)
         }
     }
 

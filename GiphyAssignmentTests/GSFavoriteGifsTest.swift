@@ -93,9 +93,13 @@ class GSFavoriteGifsTest: QuickSpec {
                     GSDBManager.sharedGifDBManager.getGifDao().insert(obj: gifs[0])
                     GSDBManager.sharedGifDBManager.getGifDao().insert(obj: gifs[1])
 
-                    // wait to complete insert
-                    expect(self.getGif(gifs[0].id!)).toEventuallyNot(beNil(), timeout: 3)
-                    expect(self.getGif(gifs[1].id!)).toEventuallyNot(beNil(), timeout: 3)
+                    if let id = gifs[0].id {
+                        expect(self.getGif(id)).toEventuallyNot(beNil(), timeout: 3)
+                    }
+
+                    if let id = gifs[1].id {
+                        expect(self.getGif(id)).toEventuallyNot(beNil(), timeout: 3)
+                    }
 
                     /// case 1
                     let getAllGifs = { GSDBManager.sharedGifDBManager.getGifDao().loadAllGifs() }
@@ -116,13 +120,15 @@ class GSFavoriteGifsTest: QuickSpec {
                 }
 
                 it("can delete Gif record"){
+
+                    guard let id = self.gif.id else { return }
                     /// insert
                     GSDBManager.sharedGifDBManager.getGifDao().insert(obj: self.gif)
-                    expect(self.getGif(self.gif.id!)).toEventuallyNot(beNil(), timeout: 3)
+                    expect(self.getGif(id)).toEventuallyNot(beNil(), timeout: 3)
 
                     /// delete
                     GSDBManager.sharedGifDBManager.getGifDao().delete(obj: self.gif.id)
-                    expect(self.getGif(self.gif.id!)).toEventually(beNil(), timeout: 3)
+                    expect(self.getGif(id)).toEventually(beNil(), timeout: 3)
                 }
             }
         }

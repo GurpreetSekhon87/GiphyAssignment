@@ -41,6 +41,11 @@ class GSFeedViewController: UIViewController {
         getTrendingGifs()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        feedTableView.reloadData()
+    }
+
     /// Get Trending Gifs
     func getTrendingGifs() {
         bindTableViewData()
@@ -108,8 +113,10 @@ extension GSFeedViewController: UISearchBarDelegate {
         // Fetch searched gifs from
         if let enteredText = searchBar.text {
             currentQuery = enteredText
-            pageOffset = 0
-            getSearchedGifs(userQuery: enteredText)
+            if currentQuery.count > 0 {
+                pageOffset = 0
+                getSearchedGifs(userQuery: enteredText)
+            }
         }
 
         searchBar.resignFirstResponder()

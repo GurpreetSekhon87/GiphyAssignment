@@ -34,8 +34,8 @@ class GSGifsFeedTests: QuickSpec {
         describe("Network call is establised for Trending Gif API"){
             it("should get trending list"){
                 waitUntil(timeout: 5) { done in
-                    networkManager.getTrendingGifs(page: 1) { gifModels, error in
-                        expect(gifModels?.count).to(equal(10))
+                    networkManager.getGifs(offset: 0) { gifModels, error in
+                        expect(gifModels?.count).to(equal(4))
                         done()
                     }
                 }
@@ -45,8 +45,8 @@ class GSGifsFeedTests: QuickSpec {
         describe("Network call is establised for Search Gif API"){
             it("should get list of gifs according to user input"){
                 waitUntil(timeout: 5) { done in
-                    networkManager.getSearchedGifs(query: "Burger") { gifModels, error in
-                        expect(gifModels?.count).to(equal(20))
+                    networkManager.getGifs(query: "Burger", offset: 0) { gifModels, error in
+                        expect(gifModels?.count).to(equal(4))
                         done()
                     }
                 }

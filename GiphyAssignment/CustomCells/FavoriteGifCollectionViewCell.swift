@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FLAnimatedImage
+import Kingfisher
 
 /// FavoriteGifCollectionViewCellDelegate to handle user action
 protocol FavoriteGifCollectionViewCellDelegate : class {
@@ -19,7 +19,7 @@ class FavoriteGifCollectionViewCell: UICollectionViewCell {
     var cellDelegate: FavoriteGifCollectionViewCellDelegate?
 
     @IBOutlet weak var unFavoriteButton: UIButton!
-    @IBOutlet weak var favoriteGifImageView: FLAnimatedImageView!
+    @IBOutlet weak var favoriteGifImageView: AnimatedImageView!
 
     /// To configure data for collection view cell
     /// - Parameter model: Gif Model

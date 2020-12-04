@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="y0n-xp-Q2X">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="y0n-xp-Q2X">
                                 <rect key="frame" x="0.0" y="112" width="414" height="701"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -70,7 +70,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="favoriteButton" destination="MfV-Gk-lI0" id="uMT-I8-1ai"/>
-                                            <outlet property="gifImageView" destination="lsk-0u-raZ" id="9Xb-ke-zW3"/>
+                                            <outlet property="gifImageView" destination="lsk-0u-raZ" id="6Wz-t7-A8n"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -199,7 +199,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="170" height="220"/>
                                         <connections>
-                                            <outlet property="favoriteGifImageView" destination="KfE-K4-Ecd" id="2hC-9b-pgg"/>
+                                            <outlet property="favoriteGifImageView" destination="KfE-K4-Ecd" id="XHw-X3-vOz"/>
                                             <outlet property="unFavoriteButton" destination="yWW-XI-afM" id="kNJ-XZ-Tih"/>
                                         </connections>
                                     </collectionViewCell>
