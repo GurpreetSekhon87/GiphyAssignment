@@ -28,17 +28,17 @@ the favorite gifs stored in the local database
 
 ### To fetch data from Giphy API
 
+pageoffset - Int Value : It is a starting index from where you want to fetch the records
+
 ```swift
     private let gifViewModel = GifViewModel()
-    gifViewModel.fetchTredingGifs()
-    gifViewModel.fetchSearchGifs(query: userQuery)
+    gifViewModel.fetchTredingGifs(offset: pageOffset)
+    gifViewModel.fetchSearchGifs(query: userQuery, offset: pageOffset)
 ```
 
 ### To Save data into Local Database
-
 ```swift
-    private let model = GifModel()
-    GSDBManager.sharedGifDBManager.getGifDao().insert(obj: model)
+    gifViewModel.insertGifIntoDatabase(gif: [Need to pass gif model object])
 ```
 ### To Retrieve data from Local Database
  It will return the observable<[GifModels]>. User need to subscribe to get the data.
@@ -47,7 +47,7 @@ the favorite gifs stored in the local database
 ```
 ### To delete data from Local Database
 ```swift
-    GSDBManager.sharedGifDBManager.getGifDao().deleteGifById(id: [Need to pass model id property])
+    gifViewModel.deleteGifFromDatabase(id: [Need to pass model id property])
 ```
 ### Test Coverage is 67%
 
